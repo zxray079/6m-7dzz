@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: .
+    container_name: django_backend
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - static_volume:/app/back_static
+      - media_volume:/app/back_media
+
+volumes:
+  static_volume:
+  media_volume:
